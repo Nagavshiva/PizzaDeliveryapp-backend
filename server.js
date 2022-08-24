@@ -6,7 +6,6 @@ const connection = require("./db");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 const passwordResetRoutes = require("./routes/passwordReset");
-const path = require("path");
 require("colors");
 const morgan = require("morgan");
 
@@ -16,23 +15,9 @@ connection();
 // middlewares
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(cors({
-    "origin": "*",
-  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-  "preflightContinue": false,
-  "optionsSuccessStatus": 204
-}))
+app.use(cors())
 
-if(process.env.NODE_ENV ==='production')
-{
-    app.use('/' , express.static('client/build'))
 
-    app.get('*' , (req , res)=>{
-
-        res.sendFile(path.resolve(__dirname  , 'client/build/index.html'))
-
-    })
-}
 
 
 // routes
