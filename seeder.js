@@ -1,7 +1,7 @@
 const mogoose = require("mongoose");
 const dotenv = require("dotenv");
 require("colors");
-const connection = require("./db");
+const connectDb = require("./config/config");
 const Pizza = require("./models/pizzaModel");
 const Pizzas = require("./data/pizza-data");
 
