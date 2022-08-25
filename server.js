@@ -15,10 +15,10 @@ connection();
 app.use(express.json());
 app.use(cors())
 
-
-
-
 // routes
+app.get('/', (req,res) =>
+  res.status(200).json('welcome to my pizza delivery app'),
+)
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/password-reset", passwordResetRoutes);
