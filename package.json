@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "data:import": "node seeder.js",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "data:import": "node seeder.js"
+    
   },
   "author": "",
   "license": "ISC",

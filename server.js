@@ -28,5 +28,9 @@ app.use("/api/password-reset", passwordResetRoutes);
 app.use("/api/pizzas", require("./routes/pizzaRoute"));
 app.use("/api/payment/", require("./routes/orderRoute"));
 
-const port = process.env.PORT || 8080;
-app.listen(port, console.log(`Listening on port ${port}...`));
+// server is listening for requests
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`✅ Server is listening on port: ${PORT}`);
+});
+
