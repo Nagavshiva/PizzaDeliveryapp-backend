@@ -6,15 +6,13 @@ const connection = require("./db");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 const passwordResetRoutes = require("./routes/passwordReset");
-require("colors");
-const morgan = require("morgan");
+
 
 // database connection
 connection();
 
 // middlewares
 app.use(express.json());
-app.use(morgan("dev"));
 app.use(cors())
 
 
