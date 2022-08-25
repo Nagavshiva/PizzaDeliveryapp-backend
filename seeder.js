@@ -7,7 +7,7 @@ const Pizzas = require("./data/pizza-data");
 
 //config dot env and mongodb conn file
 dotenv.config();
-connection();
+connectDb();
 
 //import data
 const importData = async () => {

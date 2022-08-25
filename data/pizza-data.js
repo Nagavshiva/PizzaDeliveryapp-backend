@@ -208,4 +208,5 @@ const pizzas = [
         "Mix the tomatoes, olive oil, basil, garlic, thyme, oregano, cinnamon and nutmeg in a large bowl with a hand mixer",
     },
   ];
+  
   module.exports = pizzas;

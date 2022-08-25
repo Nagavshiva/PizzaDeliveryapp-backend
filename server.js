@@ -6,7 +6,7 @@ const connectDB = require("./config/config");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 const passwordResetRoutes = require("./routes/passwordReset");
-
+const morgan = require("morgan");
 
 //connection mongodb
 connectDB();
@@ -15,6 +15,7 @@ connectDB();
 // middlewares
 app.use(express.json());
 app.use(cors())
+app.use(morgan("dev"));
 
 // routes
 app.get('/', (req,res) =>
@@ -23,9 +24,6 @@ app.get('/', (req,res) =>
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/password-reset", passwordResetRoutes);
-
-
-//route
 app.use("/api/pizzas", require("./routes/pizzaRoute"));
 app.use("/api/payment/", require("./routes/orderRoute"));
 
